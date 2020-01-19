@@ -11,6 +11,7 @@ import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
   name: 'home',
+  // viewsはrouterに呼ばれページを表示し、その中で利用したいコンポーネントを呼び出す
   components: {
     HelloWorld
   }
