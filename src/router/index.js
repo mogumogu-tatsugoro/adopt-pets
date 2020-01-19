@@ -1,22 +1,36 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Cats from '../views/Cats.vue'
+import Dogs from '../views/Dogs.vue'
+import Pets from '../views/Pets.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    // nameプロパティを指定することで名前を使ってルートを特定できるようになる
+    // 名前を付けたルートにリンクするには、 router-link コンポーネントの to プロパティにオブジェクトを渡します。
+    // e.g. <router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>
+    // ref. https://router.vuejs.org/ja/guide/essentials/named-routes.html
     name: 'home',
     component: Home
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/cats',
+    name: 'cats',
+    component: Cats
+  },
+  {
+    path: '/dogs',
+    name: 'dogs',
+    component: Dogs
+  },
+  {
+    path: '/pets',
+    name: 'pets',
+    component: Pets
   }
 ]
 
