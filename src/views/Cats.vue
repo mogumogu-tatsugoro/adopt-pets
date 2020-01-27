@@ -12,13 +12,16 @@
 </template>
 
 <script>
-// @ は src ディレクトリのショートハンド
-import cats from '@/data/cats.js'
+import { mapState } from 'vuex'
+
 export default {
   data () {
-    return {
-      cats: cats
-    }
+    return {}
+  },
+  computed: {
+    ...mapState([
+      'cats'
+    ])
   }
 }
 </script>
